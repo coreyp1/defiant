@@ -1,0 +1,2 @@
+{ "name" : "plugin",
+  "main" : "./plugin.js" }

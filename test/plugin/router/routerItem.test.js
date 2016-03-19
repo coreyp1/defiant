@@ -1,0 +1,121 @@
+"use strict";
+
+const expect = require('chai').expect;
+const Defiant = require('../../../');
+const Registry = Defiant.util.Registry;
+const RouterItem = Defiant.Router.RouterItem;
+
+describe('Defiant Class RouterItem', () => {
+  describe('uninstantiated object', () => {
+  });
+
+  describe('instantiated object', () => {
+    it('should be initialized with an empty route and subquery', () => {
+      let routerItem = new RouterItem();
+      expect(routerItem.handlers).to.be.an.instanceof(Registry);
+      expect(routerItem.subquery).to.be.an.instanceof(Map);
+      expect(routerItem.subquery.size).to.equal(0);
+    });
+  });
+
+  describe('when storing handlers', () => {
+    it('should add and retrieve a base-path handler', () => {
+      let routerItem = new RouterItem(),
+          obj = {id: 1, path: ''};
+      expect(routerItem.addHandler(obj).collectHandlers('')[0]).to.equal(obj);
+    });
+
+    it('should add and retrieve a recursively-placed handler', () => {
+      let routerItem = new RouterItem(),
+          obj = {id: 1, path: 'a'};
+      expect(routerItem.addHandler(obj).collectHandlers('a')[0]).to.equal(obj);
+    });
+
+    it('should ignore handlers with unassociated paths', () => {
+      let obj1 = {id: 1, path: 'a'},
+          obj2 = {id: 2, path: 'b'},
+          routerItem = new RouterItem().addHandler(obj1).addHandler(obj2),
+          handlers = routerItem.collectHandlers('a');
+      expect(handlers.length).to.equal(1);
+      expect(handlers[0]).to.equal(obj1);
+    });
+
+    it('should add and retrieve wildcard handlers', () => {
+      let routerItem = new RouterItem(),
+          obj = {id: 1, path: '*'};
+      expect(routerItem.addHandler(obj).collectHandlers('a')[0]).to.equal(obj);
+      expect(routerItem.addHandler(obj).collectHandlers('a/b')[0]).to.equal(obj);
+    });
+
+    it('should omit unrelated wildcard handlers', () => {
+      let obj = {id: 1, path: 'a/*/d'},
+          routerItem = new RouterItem().addHandler(obj),
+          handlers = routerItem.collectHandlers('a/b/c');
+      expect(handlers.length).to.equal(0);
+    });
+
+    it('should combine explicit and wildcard handlers', () => {
+      let obj1 = {id: 1, path: 'a/*'},
+          obj2 = {id: 2, path: 'a/b'},
+          obj3 = {id: 3, path: '*'},
+          routerItem = new RouterItem()
+            .addHandler(obj1)
+            .addHandler(obj2)
+            .addHandler(obj3),
+          handlers = routerItem.collectHandlers('a/b/c');
+      expect(handlers.length).to.equal(3);
+    });
+  });
+
+  describe('when sorting handlers', () => {
+    it('should respect the given weights of the handlers', () => {
+      let obj1 = {id: 1, path: '', weight: 3},
+          obj2 = {id: 2, path: '', weight: 2},
+          obj3 = {id: 3, path: '', weight: 1},
+          routerItem = new RouterItem()
+            .addHandler(obj1)
+            .addHandler(obj2)
+            .addHandler(obj3);
+      expect(routerItem.collectHandlers('')).to.eql([obj3, obj2, obj1]);
+    });
+
+    it('should respect the given weights of the handlers', () => {
+      let obj1 = {id: 1, path: '*/*/b', weight: 0},
+          obj2 = {id: 2, path: '*', weight: 0},
+          obj3 = {id: 3, path: '*/a/b', weight: 0},
+          routerItem = new RouterItem()
+            .addHandler(obj1)
+            .addHandler(obj2)
+            .addHandler(obj3),
+          handlers = routerItem.collectHandlers('foo/a/b');
+      expect(handlers).to.eql([obj3, obj1, obj2]);
+    });
+
+    it('should order by strength of url match when weights are otherwise equal', () => {
+      let paths = ['*/*/*/*', '*/*/*/d', '*/*/c/*', '*/*/c/d',
+                   '*/b/*/*', '*/b/*/d', '*/b/c/*', '*/b/c/d',
+                   'a/*/*/*', 'a/*/*/d', 'a/*/c/*', 'a/*/c/d',
+                   'a/b/*/*', 'a/b/*/d', 'a/b/c/*', 'a/b/c/d'],
+          expectedOrder = [15,14,13,11,12,10,9,7,8,6,5,3,4,2,1,0],
+          objs = paths.map((p, i) => ({id: i, path: p})),
+          routerItem = new RouterItem();
+      objs.map(obj => routerItem.addHandler(obj));
+      let handlers = routerItem.collectHandlers('a/b/c/d/e');
+      expect(handlers.map(h => h.path)).to.eql(expectedOrder.map(i => paths[i]));
+    });
+
+    it('should properly sort handlers of mixed weight and url strength', () => {
+      let obj1 = {id: 1, path: 'a/*', weight: 0},
+          obj2 = {id: 2, path: 'a/b', weight: 0},
+          obj3 = {id: 3, path: 'a/*', weight: 3},
+          obj4 = {id: 4, path: 'a/b/c', weight: 3},
+          routerItem = new RouterItem()
+            .addHandler(obj1)
+            .addHandler(obj2)
+            .addHandler(obj3)
+            .addHandler(obj4),
+          handlers = routerItem.collectHandlers('a/b/c');
+      expect(handlers).to.eql([obj2, obj1, obj4, obj3]);
+    });
+  });
+});
