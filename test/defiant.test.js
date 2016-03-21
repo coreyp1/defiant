@@ -8,5 +8,8 @@ describe('Defiant', () => {
     it('should contain object Defiant.util', () => {
       expect(Defiant.util).isObject;
     });
+    it('should contain Plugin class', () => {
+      expect(Defiant.Plugin).isObject;
+    });
   });
 });

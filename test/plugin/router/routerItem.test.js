@@ -3,7 +3,7 @@
 const expect = require('chai').expect;
 const Defiant = require('../../../');
 const Registry = Defiant.util.Registry;
-const RouterItem = Defiant.Router.RouterItem;
+const RouterItem = Defiant.Plugin.Router.RouterItem;
 
 describe('Defiant Class RouterItem', () => {
   describe('uninstantiated object', () => {
@@ -76,19 +76,7 @@ describe('Defiant Class RouterItem', () => {
             .addHandler(obj1)
             .addHandler(obj2)
             .addHandler(obj3);
-      expect(routerItem.collectHandlers('')).to.eql([obj3, obj2, obj1]);
-    });
-
-    it('should respect the given weights of the handlers', () => {
-      let obj1 = {id: 1, path: '*/*/b', weight: 0},
-          obj2 = {id: 2, path: '*', weight: 0},
-          obj3 = {id: 3, path: '*/a/b', weight: 0},
-          routerItem = new RouterItem()
-            .addHandler(obj1)
-            .addHandler(obj2)
-            .addHandler(obj3),
-          handlers = routerItem.collectHandlers('foo/a/b');
-      expect(handlers).to.eql([obj3, obj1, obj2]);
+      expect(RouterItem.sortHandlers(routerItem.collectHandlers(''))).to.eql([obj3, obj2, obj1]);
     });
 
     it('should order by strength of url match when weights are otherwise equal', () => {
@@ -101,7 +89,7 @@ describe('Defiant Class RouterItem', () => {
           routerItem = new RouterItem();
       objs.map(obj => routerItem.addHandler(obj));
       let handlers = routerItem.collectHandlers('a/b/c/d/e');
-      expect(handlers.map(h => h.path)).to.eql(expectedOrder.map(i => paths[i]));
+      expect(RouterItem.sortHandlers(handlers).map(h => h.path)).to.eql(expectedOrder.map(i => paths[i]));
     });
 
     it('should properly sort handlers of mixed weight and url strength', () => {
@@ -115,7 +103,7 @@ describe('Defiant Class RouterItem', () => {
             .addHandler(obj3)
             .addHandler(obj4),
           handlers = routerItem.collectHandlers('a/b/c');
-      expect(handlers).to.eql([obj2, obj1, obj4, obj3]);
+      expect(RouterItem.sortHandlers(handlers)).to.eql([obj2, obj1, obj4, obj3]);
     });
   });
 });
