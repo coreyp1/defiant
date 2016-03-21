@@ -8,7 +8,7 @@ describe('Defiant Plugin base class', () => {
   describe('when instantiated', () => {
     it('saves the provided Engine object', () => {
       let obj = {},
-          plugin = new Plugin(obj);
+          plugin = new Plugin('foo', obj);
       expect(plugin.engine).to.eql(obj);
     });
   });
