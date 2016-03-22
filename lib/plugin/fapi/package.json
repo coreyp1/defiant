@@ -1,0 +1,2 @@
+{ "name" : "fapi",
+  "main" : "./fapi.js" }
