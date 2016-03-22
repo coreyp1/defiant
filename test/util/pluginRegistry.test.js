@@ -10,7 +10,7 @@ describe('PluginRegistry', () => {
     it('should initialize the item with a reference to Engine', () => {
       let pluginRegistry = new PluginRegistry(),
           engine = {};
-      expect(pluginRegistry.set(Plugin, engine).get(undefined).engine).to.equal(engine);
+      expect(pluginRegistry.set(Plugin, engine).get('Plugin').engine).to.equal(engine);
     })
   })
 })

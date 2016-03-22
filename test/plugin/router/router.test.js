@@ -8,7 +8,7 @@ describe('Plugin.Router', () => {
   it('should be after Http in the Engine plugin registry', () => {
     let engine = new Defiant.Engine(),
         plugins = engine.plugin.getOrderedKeys();
-    expect(plugins.indexOf('router')).to.be.above(plugins.indexOf('http'));
+    expect(plugins.indexOf('Router')).to.be.above(plugins.indexOf('Http'));
   });
 
   describe('before being instantiated', () => {
