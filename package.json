@@ -27,7 +27,8 @@
     "serve-index": "^1.7.3",
     "serve-static": "^1.10.2",
     "simple-peer": "^6.0.2",
-    "socket.io": "^1.4.5"
+    "socket.io": "^1.4.5",
+    "sql": "^0.67.0"
   },
   "devDependencies": {
     "chai": "^3.5.0",
