@@ -30,17 +30,16 @@ Read the (short) Manifesto itself in order to understand how we apply these idea
 
 To run Defiant:
 ```
-var Defiant = require('defiant');
-Defiant()
+const Defiant = require('./defiant');
+
+new Defiant.Engine()
   // Explicitly set a directory where Defiant should look for the settings
   // files.  If no files exist, then appropriate defaults will be generated.
   // This directory should be separate from your application code, and
   // preferably under version control.
   .defineBootstrapDirectory('/var/defiant/settings')
   // Start the server.
-  .listen(8888, function() {
-    console.log("Server has started.");
-  });
+  .plugin.get('Http').listen(8888, () => console.log("Server has started"));
 ```
 
 NPM dependencies (maybe more?):
