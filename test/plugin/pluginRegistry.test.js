@@ -1,8 +1,8 @@
-"use strict";
+'use strict';
 
 const expect = require('chai').expect;
 const Defiant = require('../../');
-const PluginRegistry = Defiant.util.PluginRegistry;
+const PluginRegistry = Defiant.Plugin.PluginRegistry;
 const Plugin = Defiant.Plugin;
 
 describe('PluginRegistry', () => {
