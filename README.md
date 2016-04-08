@@ -38,25 +38,9 @@ new Defiant.Engine()
   // This directory should be separate from your application code, and
   // preferably under version control.
   .defineBootstrapDirectory('/var/defiant/settings')
-  // Start the server.
-  .plugin.get('Http').listen(8888, () => console.log("Server has started"));
+  // Initialize the Engine and its components.
+  .init();
 ```
-
-NPM dependencies (maybe more?):
-* async
-* busboy
-* client-sessions
-* cookie
-* connect
-* he
-* node-uuid
-* parseurl
-* resolve
-* serve-index
-* serve-static
-* socket.io
-* simple-peer
-* utils-merge
 
 ## Current State
 
