@@ -47,7 +47,7 @@ describe('Defiant utility mkdirp()', () => {
       co(function*() {
         let dirName = baseDir;
         let result = yield mkdirp(dirName);
-        expect(result).to.be.true;
+        expect(result).to.be.undefined;
         done();
       })();
     });
@@ -55,7 +55,7 @@ describe('Defiant utility mkdirp()', () => {
       co(function*() {
         let dirName = path.join(baseDir, 'createSubdirectories', 'foo', 'bar', 'baz');
         let result = yield mkdirp(dirName);
-        expect(result).to.be.true;
+        expect(result).to.be.undefined;
         done();
       })();
     });
@@ -64,7 +64,7 @@ describe('Defiant utility mkdirp()', () => {
         let dirName = path.join(baseDir, 'directoryExists');
         yield mkdirp(dirName);
         let result = yield mkdirp(dirName);
-        expect(result).to.be.true;
+        expect(result).to.be.undefined;
         done();
       })();
     });
@@ -73,7 +73,7 @@ describe('Defiant utility mkdirp()', () => {
         let dirName = '/../foo';
         yield mkdirp(dirName);
         let result = yield mkdirp(dirName);
-        expect(result).to.not.be.true;
+        expect(result).to.not.be.undefined;
         done();
       })();
     });
@@ -84,7 +84,7 @@ describe('Defiant utility mkdirp()', () => {
         yield mkdirp(dirName);
         fs.writeFileSync(filePath, '', {mode: 0o600});
         let result = yield mkdirp(filePath);
-        expect(result).to.not.be.true;
+        expect(result).to.not.be.undefined;
         done();
       })();
     });
