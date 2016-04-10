@@ -2,7 +2,7 @@
 
 **Defiant** is a Node.js web app framework.  Defiant is so named because its creators have strong opinions on how a system such as this should be designed, as well as its potential for use.  (It was also called "Defiant" because it seemed like so many of the existing frameworks were basically clones of one another, and we wanted to do something completely different.)
 
-Defiant is *not* a finished project.  It is, however, an active work in progress, and we would welcome your input.
+Defiant is *not* a finished project.  It is, however, an active work in progress, and we would welcome your input.  Check out the [Roadmap](ROADMAP.md) for to see where you can jump in!
 
 ## What makes Defiant different
 
