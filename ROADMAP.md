@@ -6,6 +6,19 @@ This document is a mini-roadmap so that you can jump in and know where we need h
 
 The things in this list are not in any particular order, although some may not be possible until other items on the list are somewhat functional.  If you see something that you want to work on, however, there is nothing stopping you from working on anything that interests you!
 
+## What works
+
+1. The Router properly identifies the applicable route(s) for the given URL, incluing wildcard matching.
+2. The Form API (FAPI) correctly handles validation and cryptographic signing, as discussed [here](https://cscrunch.com/node/18).
+3. The Session API works so far as it gives the user an encrypted cookie, and recovers the user session from disk if not already in memory.  It supports session expiration, too.
+4. The Settings API is under way, with the user able to change the directories used to store Settings Data objects.
+5. The Theme system is being developed, so that additional themes can be enabled in a plug-and-play transparency.
+6. Various utility functions are written.
+7. An Example plugin shows the basics of use with the FAPI and Router.
+8. There is *some* test coverage (mostly the utility functions).
+
+## TODO
+
 1. Database Abstraction class using [node-sql](https://github.com/brianc/node-sql).
   * Default to [sqlite3](https://github.com/mapbox/node-sqlite3).
   * In the future, the 1st run of Defiant will create an in-memory sqlite3 database.
