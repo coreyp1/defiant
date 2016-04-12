@@ -12,6 +12,14 @@ Defiant does not adhere to a strict MVC framework, because that is not flexible 
 
 Every framework has opinions about something.  Some care about where your files are placed, and some want to enforce specific paradigms.  Defiant's opinions are about how the disparate parts should interact.  The JavaScript language and the Node.js platform provide a unique and powerful set of tools to tackle many different problems and use cases under a unified architecture.
 
+## License
+
+We believe that Open Source should be just that: completely open.  We generally disagree with some of the provisions of the GPL which places demands on other projects, and so have licensed this project under the [MIT](LICENSE) license.
+
+## Copyright
+
+In an ideal world, copyright would be a thing that we could ignore for the greater good.  Unfortunately, lawyers, politicians, and corporate greed have complicated things, so we must operate under the burden that they have created.  As such, the copyright holder for the Defiant project is Corey Pennycuff.  Any contributor to the project does, by virtue of their willful contribution, hereby agrees to assign copyright of the contribution to Corey Pennycuff and affirms that they have the legal authority to do so.  Exception to this provision is allowed in the case of inclusion of 3rd party libraries, which must exist wholly within its own subdirectory and contain appropriate copyright ownership information.
+
 ## The Defiant Manifesto
 
 [The Defiant Manifesto](MANIFESTO.md) explains the philosophy of the Defiant project.  They are:
