@@ -1,0 +1,2 @@
+{ "name" : "orm",
+  "main" : "./orm.js" }
