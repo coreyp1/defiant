@@ -16,6 +16,8 @@ The things in this list are not in any particular order, although some may not b
 6. Various utility functions are written.
 7. An Example plugin shows the basics of use with the FAPI and Router.
 8. There is *some* test coverage (mostly the utility functions).
+9. For the moment, a sqlite3 database is used, but will soon be replaced withh a generic database abstraction.
+10. A Rudimentary ORM is in place.  It has a concept of Tables, Entities, and Attributes.  Entities are assembled by adding Attributes (e.g., text fields, numbers, etc.).  Attributes can have sub-attributes for many levels.  The Entity table is not revisioned (it should only keep static identity data).  All data about an Entity that can change should be put into an Attribute.  All Attributes support revisions.
 
 ## TODO
 
