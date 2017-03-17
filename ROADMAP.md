@@ -19,6 +19,8 @@ The things in this list are not in any particular order, although some may not b
 9. For the moment, a sqlite3 database is used, but will soon be replaced withh a generic database abstraction.
 10. A Rudimentary ORM is in place.  It has a concept of Tables, Entities, and Attributes.  Entities are assembled by adding Attributes (e.g., text fields, numbers, etc.).  Attributes can have sub-attributes for many levels.  The Entity table is not revisioned (it should only keep static identity data).  All data about an Entity that can change should be put into an Attribute.  All Attributes support revisions.  All Attributes can have a many-to-one relationship with the Entity; it is up to the code to control the number of Attributes allowed in a single revision.
 11. The "Message" functionality has been implemented, so that Error, Warning, Informational, etc. messages can be shown to the user.  Messages are added to the Themed page output.  (TODO: Should messages be stored in the user session rather than in the request context?)
+12. A default admin user is created (if it doesn't already exist).
+13. User login works, with persistance through Sessions.
 
 ## TODO
 
