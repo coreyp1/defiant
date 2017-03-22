@@ -21,6 +21,7 @@ The things in this list are not in any particular order, although some may not b
 11. The "Message" functionality has been implemented, so that Error, Warning, Informational, etc. messages can be shown to the user.  Messages are added to the Themed page output.  Messages are stored in an in-memory-only, volitile session variable, so as to persist across page loads.
 12. A default admin user is created (if it doesn't already exist).
 13. User login works, with persistance through Sessions.  User logout & password change also work.
+14. Serving files from directories is now supported.  This allows for mapping of arbitrary paths to specific directories, which is necessary for HTML inclusion of Plugin-provided HTML, CSS, & JavaScript.
 
 ## TODO
 
