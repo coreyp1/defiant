@@ -23,6 +23,7 @@ The things in this list are not in any particular order, although some may not b
 13. User login works, with persistance through Sessions.  User logout & password change also work.
 14. Serving files from directories is now supported.  This allows for mapping of arbitrary paths to specific directories, which is necessary for HTML inclusion of Plugin-provided HTML, CSS, & JavaScript.
 15. Context now has Javascript and CSS Registries, so that plugins can add JS & CSS to a page load.
+16. JQuery is included by default by the base theme.
 
 ## TODO
 
