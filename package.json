@@ -13,6 +13,10 @@
   ],
   "author": "Corey Pennycuff",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/coreyp1/defiant.git"
+  },
   "dependencies": {
     "async": "^1.5.2",
     "bcrypt": "^1.0.2",
