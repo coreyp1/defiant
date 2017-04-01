@@ -21,6 +21,7 @@
     "async": "^1.5.2",
     "bcrypt": "^1.0.2",
     "bluebird": "^3.5.0",
+    "bootstrap": "^3.3.7",
     "busboy": "^0.2.14",
     "client-sessions": "^0.7.0",
     "clone": "^2.1.1",
