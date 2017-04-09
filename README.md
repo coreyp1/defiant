@@ -41,12 +41,18 @@ To run Defiant:
 const Defiant = require('./defiant');
 
 new Defiant.Engine()
+  // Add Plugins.
+  // The Example Plugin is included with Defiant, and, of course, should not
+  // be included in production code.
+  .addPlugin(Defiant.Plugin.Example)
   // Explicitly set a directory where Defiant should look for the settings
   // files.  If no files exist, then appropriate defaults will be generated.
   // This directory should be separate from your application code, and
   // preferably under version control.
   .defineBootstrapDirectory('/var/defiant/settings')
   // Initialize the Engine and its components.
+  // init() is the last call that should be made, as Defiant will now begin
+  // listening for connections.
   .init();
 ```
 
