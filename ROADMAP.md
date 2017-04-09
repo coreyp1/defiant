@@ -8,21 +8,21 @@ The things in this list are not in any particular order, although some may not b
 
 ## What works
 
-1. The Router properly identifies the applicable route(s) for the given URL, incluing wildcard matching.
+1. The Router properly identifies the applicable handlers for the given URL, incluing wildcard matching.  Multiple handlers may match the requested URL.  Handlers may or may not choose to reply to a route.  The Router supports use of handler access functions to determine whether or not the handler should be given access to the request.  403 generated for access denied.
 2. The Form API (FAPI) correctly handles validation and cryptographic signing, as discussed [here](https://cscrunch.com/node/18).
-3. The Session API works so far as it gives the user an encrypted cookie, and recovers the user session from disk if not already in memory.  It supports session expiration, too.
-4. The Settings API is under way, with the user able to change the directories used to store Settings Data objects.  The user can also change the Storage class for different data points.
-5. The Theme system is being developed, so that additional themes can be enabled in a plug-and-play transparency.
-6. Various utility functions are written.
-7. An Example plugin shows the basics of use with the FAPI and Router.
+3. The Session API gives the user an encrypted cookie, and recovers the user session from disk if not already in memory.  The cookie encryption is randomly generated and unique for each installation.  Session expiration works.  A volitile Session also exists (non-disk based), and is used for small things (e.g., message delivery across page loads), but that are not important enough to save in the session file on disk.
+4. The Settings API is under way, with the user able to change the directories used to store Settings Data objects.  The user can also change the Storage class for declared data objects.
+5. The Theme system works, so that child themes will have proper fallback to the parent definitions when necessary.  Bootstrap is the basic (default) theme.
+6. Various utility functions exist.
+7. An Example plugin shows the basic usage for most features.
 8. There is *some* test coverage (mostly the utility functions).
 9. For the moment, a sqlite3 database is used, but will soon be replaced withh a generic database abstraction.
 10. A Rudimentary ORM is in place.  It has a concept of Tables, Entities, and Attributes.  Entities are assembled by adding Attributes (e.g., text fields, numbers, etc.).  Attributes can have sub-attributes for many levels.  The Entity table is not revisioned (it should only keep static identity data).  All data about an Entity that can change should be put into an Attribute.  All Attributes support revisions.  All Attributes can have a many-to-one relationship with the Entity; it is up to the code to control the number of Attributes allowed in a single revision.
 11. The "Message" functionality has been implemented, so that Error, Warning, Informational, etc. messages can be shown to the user.  Messages are added to the Themed page output.  Messages are stored in an in-memory-only, volitile session variable, so as to persist across page loads.
-12. A default admin user is created (if it doesn't already exist).
-13. User login works, with persistance through Sessions.  User logout & password change also work.
+12. A default admin account is created when the server is started (if the account doesn't already exist).
+13. User login, logout, & password change works, with account persistance through Sessions.
 14. Serving files from directories is now supported.  This allows for mapping of arbitrary paths to specific directories, which is necessary for HTML inclusion of Plugin-provided HTML, CSS, & JavaScript.
-15. Context now has Javascript and CSS Registries, so that plugins can add JS & CSS to a page load.
+15. The context variable now has Javascript and CSS Registries, so that plugins can add JS & CSS to a page load.
 16. JQuery is included by default by the base theme.
 17. Layouts are minimally functional and can be partially edited in-browser.
 
