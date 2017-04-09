@@ -28,8 +28,8 @@ The things in this list are not in any particular order, although some may not b
 
 ## TODO
 
-1. ~~Database Abstraction class using [node-sql](https://github.com/brianc/node-sql).
-  * Default to [sqlite3](https://github.com/mapbox/node-sqlite3).~~ Done.
+1. ~~Database Abstraction class using [node-sql](https://github.com/brianc/node-sql).~~ Done.
+  * ~~Default to [sqlite3](https://github.com/mapbox/node-sqlite3).~~ Done.
   * In the future, the 1st run of Defiant will create an in-memory sqlite3 database.
     * The user will then choose the actual database setup (file location if sqlite3, or db connection info).
     * Defiant will save the setup into a bootstrap variable, and migrate the database.
