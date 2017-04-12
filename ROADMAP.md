@@ -47,7 +47,7 @@ The things in this list are not in any particular order, although some may not b
 5. ~~Widgets~~ Done.
   * ~~Widgets are analogous to Drupal blocks.  They may be forms, lists, menus, or any other information that needs to appear on a page, but that may not be the main content of that page.~~ Done.
 6. ~~Layout~~ Done.
-  * ~~A Layout engine should wrap the `content` of "themed" pages.  Layouts should be defined flexibly, and~~ provide drag-and-drop addition of widgets.
+  * ~~A Layout engine should wrap the `content` of "themed" pages.  Layouts should be defined flexibly, and provide drag-and-drop addition of widgets.~~ Done.
 7. ~~Theme~~ Done.
   * ~~A default Bootstrap theme would be nice.~~ Done.
 8. ~~Messaging System~~ Done.
