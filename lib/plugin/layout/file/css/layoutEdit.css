@@ -37,10 +37,3 @@
 #widgetPlacement .widgetPlaceholder .description {
   padding-left: 10px;
 }
-
-#widgetPlacement .ui-state-highlight {
-  display: block;
-  width: 100%;
-  height: 4em;
-  border: 1px solid black;
-}
