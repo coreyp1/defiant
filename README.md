@@ -36,9 +36,27 @@ Read the (short) Manifesto itself in order to understand how we apply these idea
 
 ## Getting Started
 
-To run Defiant:
+So far I have only tested this on Linux (specifically, Debian) and the Windows Subsystem For Linus (WSL) in Windows 10.
+
+### Install the required system packages
+At a bare minimum, you need to install the `python` and `sqlite3` packages.   You may also need `build-essential`.
 ```
-const Defiant = require('./defiant');
+apt-get install python sqlite3
+```
+These are required for the installation of modules that Defiant depends on.  It is not a direct dependency of the code base.
+
+### Run NPM Intall to download the dependencies.
+This will take a while...
+```
+npm install
+```
+
+### Ensure that the necessary file directory exists, and has the proper permissions.
+By default, Defiant tries to store information in the `/var/defiant` directory.  This will be configurable in the future.  For now, create the directory, and make sure that you have write permissions to the directory.
+
+### Create an index.js with the following contents:
+```
+const Defiant = require('defiant');
 
 new Defiant.Engine()
   // Add Plugins.
@@ -60,7 +78,7 @@ new Defiant.Engine()
 
 Defiant doesn't do much at the moment, and isn't ready for serious work at all.  Why?  Because it's still being built, of course!  Parts of it only exist in the minds and conversations of the developers.  If you want to help out, then send us a message and find out what the current roadmap is.
 
-The Form API is the most developed, however even that is lacking in many areas.
+Look at the Roadmap to see what is working, and what is on our immediate radar.  Better yet, contact me and find out how you can jump in and help in the development!
 
 We repeat: This code is not yet intended for any production work whatsoever.
 
