@@ -74,6 +74,9 @@ new Defiant.Engine()
   .init();
 ```
 
+### Verify that Defiant is running.
+Defiant begins running on port `8888` (this will be configurable in the future), so you should be able to go to `http://localhost:8888` to see the site running.  Look at the console output for the administrator username and password.
+
 ## Current State
 
 Defiant doesn't do much at the moment, and isn't ready for serious work at all.  Why?  Because it's still being built, of course!  Parts of it only exist in the minds and conversations of the developers.  If you want to help out, then send us a message and find out what the current roadmap is.
