@@ -1,0 +1,46 @@
+#widgetPlacement {
+  display: flex;
+}
+
+#widgetPlacement .widgets, #widgetPlacement .regions {
+  flex: 1;
+  margin: 10px;
+}
+
+#widgetPlacement .regionPlaceholder {
+  margin: 0 10px 10px;
+}
+
+#widgetPlacement ul {
+  min-height: 50px;
+}
+
+#widgetPlacement .widgets ul {
+  overflow: auto;
+}
+
+#widgetPlacement li {
+  border: 1px solid black;
+  display: block;
+  list-style-type: none;
+}
+
+#widgetPlacement .widgetPlaceholder {
+  margin: 10px 0;
+  padding: 10px;
+}
+
+#widgetPlacement .widgetPlaceholder .title {
+  font-size: 1.w5em;
+}
+
+#widgetPlacement .widgetPlaceholder .description {
+  padding-left: 10px;
+}
+
+#widgetPlacement .ui-state-highlight {
+  display: block;
+  width: 100%;
+  height: 4em;
+  border: 1px solid black;
+}
