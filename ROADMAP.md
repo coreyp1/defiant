@@ -28,33 +28,33 @@ The things in this list are not in any particular order, although some may not b
 
 ## TODO
 
-1. Database Abstraction class using [node-sql](https://github.com/brianc/node-sql).
-  * Default to [sqlite3](https://github.com/mapbox/node-sqlite3).
+1. ~~Database Abstraction class using [node-sql](https://github.com/brianc/node-sql).~~ Done.
+  * ~~Default to [sqlite3](https://github.com/mapbox/node-sqlite3).~~ Done.
   * In the future, the 1st run of Defiant will create an in-memory sqlite3 database.
     * The user will then choose the actual database setup (file location if sqlite3, or db connection info).
     * Defiant will save the setup into a bootstrap variable, and migrate the database.
   * Support database schema versioning and upgrading.
-2. User login
-  * The admin user (if not found in the database), should be generated automatically and the password output via `console.log()`.
-3. Router
-  * Router items should support validation.
-  * Logic needs to be decided on for multiple router items responding to a request (later items may need to modify the structure created by previous items!).
-  * Support for serving static files.
-    * Plugins must be able to provide their own resource files (javascript, images, css, etc.)
+2. ~~User login~~ Done.
+  * ~~The admin user (if not found in the database), should be generated automatically and the password output via `console.log()`.~~ Done.
+3. ~~Router~~ Done.
+  * ~~Router items should support validation.~~ Done.
+  * ~~Logic needs to be decided on for multiple router items responding to a request (later items may need to modify the structure created by previous items!).~~ Done. Fall-through behavior supported.
+  * ~~Support for serving static files.~~ Done.
+    * ~~Plugins must be able to provide their own resource files (javascript, images, css, etc.)~~
     * These files should be servable securely from the plugin directory by explicit listing of files.
 4. HTTP
   * Consider doing away with the Connect module altogether, since HTTP serves the same purpose.
-5. Widgets
-  * Widgets are analogous to Drupal blocks.  They may be forms, lists, menus, or any other information that needs to appear on a page, but that may not be the main content of that page.
-6. Layout
-  * A Layout engine should wrap the `content` of "themed" pages.  Layouts should be defined flexibly, and provide drag-and-drop addition of widgets.
-7. Theme
-  * A default Bootstrap theme would be nice.
-8. Messaging System
-  * We need a way for Plugins to communicate messages to the user.
-  * The "Message box" will probably be a Widget so that it can be moved around the page as needed.
-9. JS/CSS Inclusion
-  * At any time during the router handling, other plugins should be able to add JS and CSS files as needed.
+5. ~~Widgets~~ Done.
+  * ~~Widgets are analogous to Drupal blocks.  They may be forms, lists, menus, or any other information that needs to appear on a page, but that may not be the main content of that page.~~ Done.
+6. ~~Layout~~ Done.
+  * ~~A Layout engine should wrap the `content` of "themed" pages.  Layouts should be defined flexibly, and~~ provide drag-and-drop addition of widgets.
+7. ~~Theme~~ Done.
+  * ~~A default Bootstrap theme would be nice.~~ Done.
+8. ~~Messaging System~~ Done.
+  * ~~We need a way for Plugins to communicate messages to the user.~~ Done.
+  * ~~The "Message box" will probably be a Widget so that it can be moved around the page as needed.~~ Done.
+9. ~~JS/CSS Inclusion~~ Done.
+  * ~~At any time during the router handling, other plugins should be able to add JS and CSS files as needed.~~ Done.
   * Support JS and CSS minification (if possible).
   * Perhaps a type of library support, too (e.g., D3, when needed).
 10. Menu system
