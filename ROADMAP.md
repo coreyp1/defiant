@@ -22,7 +22,7 @@ The things in this list are not in any particular order, although some may not b
 12. A default admin account is created when the server is started (if the account doesn't already exist).
 13. User login, logout, & password change works, with account persistance through Sessions.
 14. Serving files from directories is now supported.  This allows for mapping of arbitrary paths to specific directories, which is necessary for HTML inclusion of Plugin-provided HTML, CSS, & JavaScript.
-15. The context variable now has Javascript and CSS Registries, so that plugins can add JS & CSS to a page load.
+15. The context variable now has Javascript and CSS Registries, so that plugins can add JS & CSS to a page load. Better, though, is using the Library plugin to utilize 3rd party plugins (jQuery and jQueryUI are included by default).
 16. JQuery is included by default by the base theme.
 17. Layouts are minimally functional and can be partially edited in-browser.
 
@@ -56,13 +56,15 @@ The things in this list are not in any particular order, although some may not b
 9. ~~JS/CSS Inclusion~~ Done.
   * ~~At any time during the router handling, other plugins should be able to add JS and CSS files as needed.~~ Done.
   * Support JS and CSS minification (if possible).
-  * Perhaps a type of library support, too (e.g., D3, when needed).
+  * ~~Perhaps a type of library support, too (e.g., D3, when needed).~~ Done.
 10. Menu system
-  * Plugins need a way to declare that some routes are intended to be menu items.
+  * ~~Plugins need a way to declare that some routes are intended to be menu items.~~ Done.  There are 4 default menus, which appear in the Layout as a Widget.
   * Types of menus are:
     * Static (always appear regardless of current page)
     * Contextual (only appear when their path can be generated from the URL of the current page)
-  * Links should not appear if the user does not have access to that page.
+  * ~~Links should not appear if the user does not have access to that page.~~ Done.
+  * Now working on custom ordering, indenting, & other behavioral settings.
+  * The Navigation Menu Widget needs to replace the current, static header.
 11. Internationalization
   * Stub out support for translation based on context.
   * Figure out where to go from here...
