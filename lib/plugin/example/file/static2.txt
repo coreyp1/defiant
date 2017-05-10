@@ -1,0 +1,5 @@
+This file should be reachable via:
+  example.directory/static2.txt
+
+This file should NOT be reachable via:
+  example.file/static2.txt
