@@ -1,0 +1,2 @@
+{ "name" : "manager",
+  "main" : "./manager.js" }
