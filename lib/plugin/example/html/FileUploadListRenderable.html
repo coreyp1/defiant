@@ -1,0 +1,26 @@
+<% // TODO: Escape. %>
+<% // TODO: Translate. %>
+<%
+function formatBytes(bytes, decimals=2) {
+  let k = 1024;
+  let sizes = ['b', 'kb', 'mb', 'gb', 'tb', 'pb', 'eb', 'zb', 'yb'];
+  let exponent = Math.floor(Math.log(bytes) / Math.log(k));
+  return bytes < 1024
+    ? bytes == 0 ? '0 b' : (bytes + ' b')
+    : parseFloat((bytes / Math.pow(k, exponent)).toFixed(decimals)) + ' ' + sizes[exponent];
+}
+%>
+<% if ((typeof files === 'object') && (files.constructor === Array)) { %>
+<table>
+  <thead>
+    <tr>
+      <td>File</td><td>Created</td><td>Size</td>
+    </tr>
+  </thead>
+  <tbody>
+  <% for (let file of files) { %>
+    <tr><td><a href="/file/example/uploaded/<%= file.uuid %>"><%= file.originalName %></a></td><td><%= file.created %></td><td><%= formatBytes(file.size) %></td></tr>
+  <% } %>
+  </tbody>
+</table>
+<% } %>
