@@ -19,7 +19,7 @@ function formatBytes(bytes, decimals=2) {
   </thead>
   <tbody>
   <% for (let file of files) { %>
-    <tr><td><a href="/file/example/uploaded/<%= file.uuid %>"><%= file.originalName %></a></td><td><%= file.created %></td><td><%= formatBytes(file.size) %></td></tr>
+    <tr><td><a href="<%= file.url %>"><%= file.originalName %></a></td><td><%= file.created %></td><td><%= formatBytes(file.size) %></td></tr>
   <% } %>
   </tbody>
 </table>
