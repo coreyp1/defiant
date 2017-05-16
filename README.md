@@ -19,6 +19,7 @@ What kind of systems *could* be built using Defiant?
 * Project Management (as in replacing GitHub, Slack, Trello, etc., with a single, self-managed, private solution)
 * Collaborative development tools (as in replacing Google Docs, Zoho Docs, ShareLatex, and the like)
 * Help Desk and Customer Support
+* Server configuration management (as in replacing Puppet and Chef)
 * General CMS
 * Microservices
 
