@@ -1,8 +1,30 @@
 # Be Defiant!
 
-**Defiant** is a Node.js web app framework.  Defiant is so named because its creators have strong opinions on how a system such as this should be designed, as well as its potential for use.  (It was also called "Defiant" because it seemed like so many of the existing frameworks were basically clones of one another, and we wanted to do something completely different.)
+**Defiant** is a Node.js web app framework intended to facilitate the building of disruptive technology.
+
+Defiant is so named because its creators have strong opinions on how a system such as this should be designed, as well as its potential for use.  (It was also called "Defiant" because it seemed like so many of the existing frameworks were basically clones of one another, and we wanted to do something completely different.)
 
 Defiant is *not* a finished project.  It is, however, an active work in progress, and we would welcome your input.  Check out the [Roadmap](ROADMAP.md) for to see where you can jump in!
+
+## Disuptive technology... That's vague.  What exactly do you mean?  Can you give me an example?
+
+Let's use email as an example.  If you want your own email address (e.g., @yourname.com), you have one of two options: Either set up your own email server or have someone (like Google, Zoho, etc.) host it for you, probably for a monthly/annual fee.  Self-managing is extremely complicated (setting up firewalls, IMAP/POP3/SMTP access, a web-based front-end, DNS records with correct DKIM and SPF records, SSL certificates, spam filtering, antivirus, user management etc.), and if you get it wrong, the results can catastrophic.  Paying someone else to manage it, however, can get expensive when you need multiple user accounts, allows for little customization, and you are always at the mercy of that 3rd party (and however they may decide to spy on you).
+
+What does this have to do with Defiant?  Defian't framework could provide all of the parts mentioned above, wrapped in a single, simple package (from the perspective of the end user).  In a sense, the framework's intent is to choreograph the interaction of all of these different, individual systems, and put them into a format that us "mere mortals" can implement safely.  Defiant wants you to be able to own and manage these technologies (and, by proxy, your own data) from the privacy of our own servers.
+
+What kind of systems *could* be built using Defiant?
+* Email (mentioned above)
+* Video/audio communications (as in replacing FaceTime, Skype, Google Hangouts, etc., with personal, peer-to-peer communication via WebRTC)
+* E-Commerce
+* Project Management (as in replacing GitHub, Slack, Trello, etc., with a single, self-managed, private solution)
+* Collaborative development tools (as in replacing Google Docs, Zoho Docs, ShareLatex, and the like)
+* Help Desk and Customer Support
+* General CMS
+* Microservices
+
+These systems do not exist yet, but rather they show the intent behind Defiant.  We want to have a secure, easy-to-use, flexible framework from which to build (mix-and-match, really) the above-mentioned systems.  We want to take the Internet back from the big corporations and put powerful technologies back into the hands of us normal people.
+
+By the way, we need your help to do it.  Please consider helping us to develop Defiant, and take back the Internet.  **Be Defiant!**
 
 ## What makes Defiant different
 
