@@ -6,7 +6,7 @@ Defiant is so named because its creators have strong opinions on how a system su
 
 Defiant is *not* a finished project.  It is, however, an active work in progress, and we would welcome your input.  Check out the [Roadmap](ROADMAP.md) for to see where you can jump in!
 
-## Disuptive technology... That's vague.  What exactly do you mean?  Can you give me an example?
+## Disruptive technology... That's vague.  What exactly do you mean?  Can you give me an example?
 
 Let's use email as an example.  If you want your own email address (e.g., @yourname.com), you have one of two options: Either set up your own email server or have someone (like Google, Zoho, etc.) host it for you, probably for a monthly/annual fee.  Self-managing is extremely complicated (setting up firewalls, IMAP/POP3/SMTP access, a web-based front-end, DNS records with correct DKIM and SPF records, SSL certificates, spam filtering, antivirus, user management etc.), and if you get it wrong, the results can catastrophic.  Paying someone else to manage it, however, can get expensive when you need multiple user accounts, allows for little customization, and you are always at the mercy of that 3rd party (and however they may decide to spy on you).
 
