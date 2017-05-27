@@ -9,7 +9,7 @@ The things in this list are not in any particular order, although some may not b
 ## What works
 
 1. The Router properly identifies the applicable handlers for the given URL, incluing wildcard matching.  Multiple handlers may match the requested URL.  Handlers may or may not choose to reply to a route.  The Router supports use of handler access functions to determine whether or not the handler should be given access to the request.  403 generated for access denied.
-2. The Form API (FAPI) correctly handles validation and cryptographic signing, as discussed [here](https://cscrunch.com/node/18).
+2. The Form API correctly handles validation and cryptographic signing, as discussed [here](https://cscrunch.com/node/18), as well as file uploads.
 3. The Session API gives the user an encrypted cookie, and recovers the user session from disk if not already in memory.  The cookie encryption is randomly generated and unique for each installation.  Session expiration works.  A volitile Session also exists (non-disk based), and is used for small things (e.g., message delivery across page loads), but that are not important enough to save in the session file on disk.
 4. The Settings API is under way, with the user able to change the directories used to store Settings Data objects.  The user can also change the Storage class for declared data objects.
 5. The Theme system works, so that child themes will have proper fallback to the parent definitions when necessary.  Bootstrap is the basic (default) theme.
@@ -24,7 +24,9 @@ The things in this list are not in any particular order, although some may not b
 14. Serving files from directories is now supported.  This allows for mapping of arbitrary paths to specific directories, which is necessary for HTML inclusion of Plugin-provided HTML, CSS, & JavaScript.
 15. The context variable now has Javascript and CSS Registries, so that plugins can add JS & CSS to a page load. Better, though, is using the Library plugin to utilize 3rd party plugins (jQuery and jQueryUI are included by default).
 16. JQuery is included by default by the base theme.
-17. Layouts are minimally functional and can be partially edited in-browser.
+17. Layouts are minimally functional and can be partially edited in-browser, including drag-and-drop widget placement.
+18. There is a Library API for managing 3rd party JS inclusions.  Includes JQuery, JQuery UI, Bootstrap, and Materialize.
+19. The File API is shaping up, and progress is being made on the FileManager class, which allows for multiple types of file stores to manage uploaded files.
 
 ## TODO
 
@@ -64,12 +66,12 @@ The things in this list are not in any particular order, although some may not b
     * Contextual (only appear when their path can be generated from the URL of the current page)
   * ~~Links should not appear if the user does not have access to that page.~~ Done.
   * Now working on custom ordering, indenting, & other behavioral settings.
-  * The Navigation Menu Widget needs to replace the current, static header.
+  * ~~The Navigation Menu Widget needs to replace the current, static header.~~ Done.
 11. Internationalization
   * Stub out support for translation based on context.
   * Figure out where to go from here...
 12. File API
-  * When files are uploaded, they should be tracked by the system.  They may be transferred to other file systems.
+  * ~~When files are uploaded, they should be tracked by the system.  They may be transferred to other file systems.~~ Partially working.
   * FTP
   * S3 (and related)
 13. Logging/Data Store
