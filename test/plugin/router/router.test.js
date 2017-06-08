@@ -7,7 +7,7 @@ const Router = Defiant.Plugin.Router;
 describe('Plugin.Router', () => {
   it('should be after Http in the Engine plugin registry', () => {
     let engine = new Defiant.Engine(),
-        plugins = engine.plugin.getOrderedKeys();
+        plugins = engine.pluginRegistry.getOrderedKeys();
     expect(plugins.indexOf('Router')).to.be.above(plugins.indexOf('Http'));
   });
 

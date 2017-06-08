@@ -5,8 +5,8 @@ const Defiant = require('../');
 
 describe('Defiant Engine', () => {
   describe('when instantiated', () => {
-    it('should contain Registry at Engine().plugin', () => {
-      expect(new Defiant.Engine().plugin).to.be.an.instanceof(Defiant.util.Registry);
+    it('should contain Registry at Engine().pluginRegistry', () => {
+      expect(new Defiant.Engine().pluginRegistry).to.be.an.instanceof(Defiant.util.Registry);
     });
   });
 });
