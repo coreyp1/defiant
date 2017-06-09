@@ -12,7 +12,7 @@ describe('Plugin.Router.Item', () => {
   describe('when instantiated', () => {
     it('should be initialized with an empty route and subquery', () => {
       let routerItem = new Item();
-      expect(routerItem.handlers).to.be.an.instanceof(Registry);
+      expect(routerItem.handlerRegistry).to.be.an.instanceof(Registry);
       expect(routerItem.subquery).to.be.an.instanceof(Map);
       expect(routerItem.subquery.size).to.equal(0);
     });
