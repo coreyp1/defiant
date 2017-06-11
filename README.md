@@ -67,14 +67,14 @@ So far I have only tested this on Linux (specifically, Debian) and the Windows S
 
 ### Install the required system packages
 At a bare minimum, you need to install the `python` and `sqlite3` packages.   You may also need `build-essential`.
-```
+```sh
 apt-get install python sqlite3
 ```
 These are required for the installation of modules that Defiant depends on.  It is not a direct dependency of the code base.
 
 ### Run NPM Intall to download the dependencies.
 This will take a while...
-```
+```sh
 npm install
 ```
 
@@ -82,7 +82,7 @@ npm install
 By default, Defiant tries to store information in the `/var/defiant` directory.  This will be configurable in the future.  For now, create the directory, and make sure that you have write permissions to the directory.
 
 ### Create an index.js with the following contents:
-```
+```js
 const Defiant = require('defiant');
 
 new Defiant.Engine()
