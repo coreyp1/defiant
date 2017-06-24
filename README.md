@@ -112,6 +112,10 @@ Look at the Roadmap to see what is working, and what is on our immediate radar. 
 
 We repeat: This code is not yet intended for any production work whatsoever.
 
+## Documentation
+
+Documentation can be found [here](docs/DOCUMENTATION.md).
+
 ## Disclaimer
 
 Nothing in the API is set in stone, and there's very little official documentation (although we do try to comment the code responsibly).  Furthermore, this is the first draft, and it's not even complete.  When you look at the code, remember this:  There are hacks and TODOs scattered throughout the system.  Sometimes the hack is just to get something working so that some other semi-related part can be fleshed out, and there is an intention to revisit the code later.  Sometimes the TODO is just a stub representing an idea, or indicating where something will need to interface with the system later.  Sometimes, the feature only exists in the minds of the authors.  ESP would be helpful here...
