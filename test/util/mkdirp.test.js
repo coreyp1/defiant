@@ -5,7 +5,6 @@ const expect = require('chai').expect;
 const fs = require('fs');
 const os = require('os');
 const path = require('path');
-const {coroutine: co, promisify} = require('bluebird');
 
 function deleteFolderRecursive(directoryToDelete) {
   let files;
@@ -29,7 +28,7 @@ function* getNonexistentDirectory() {
       dirName, stat;
   while (1) {
     dirIncrement++;
-    dirName = path.join(os.tmpDir(), dirIncrement.toString());
+    dirName = path.join(os.tmpdir(), dirIncrement.toString());
     try {
       stat = fs.statSync(dirName);
     }
@@ -43,56 +42,38 @@ const baseDir = getNonexistentDirectory().next().value;
 
 describe('Defiant utility mkdirp()', () => {
   describe('when invoked', () => {
-    it('should create a directory if it does not exist', done => {
-      co(function*() {
-        let dirName = baseDir;
-        let result = yield mkdirp(dirName);
-        expect(result).to.be.undefined;
-        done();
-      })();
+    it('should create a directory if it does not exist', async () => {
+      let dirName = baseDir;
+      let result = await mkdirp(dirName);
+      expect(result).to.be.undefined;
     });
-    it('should create all parent directories needed, as required', done => {
-      co(function*() {
-        let dirName = path.join(baseDir, 'createSubdirectories', 'foo', 'bar', 'baz');
-        let result = yield mkdirp(dirName);
-        expect(result).to.be.undefined;
-        done();
-      })();
+    it('should create all parent directories needed, as required', async () => {
+      let dirName = path.join(baseDir, 'createSubdirectories', 'foo', 'bar', 'baz');
+      let result = await mkdirp(dirName);
+      expect(result).to.be.undefined;
     });
-    it('should not return an error if the directory already exists', done => {
-      co(function*() {
-        let dirName = path.join(baseDir, 'directoryExists');
-        yield mkdirp(dirName);
-        let result = yield mkdirp(dirName);
-        expect(result).to.be.undefined;
-        done();
-      })();
+    it('should not return an error if the directory already exists', async () => {
+      let dirName = path.join(baseDir, 'directoryExists');
+      await mkdirp(dirName);
+      let result = await mkdirp(dirName);
+      expect(result).to.be.undefined;
     });
-    it('should return an error if the directory cannot be created', done => {
-      co(function*() {
-        let dirName = '/../foo';
-        yield mkdirp(dirName);
-        let result = yield mkdirp(dirName);
-        expect(result).to.not.be.undefined;
-        done();
-      })();
+    it('should return an error if the directory cannot be created', async () => {
+      let dirName = '/../foo';
+      await mkdirp(dirName);
+      let result = await mkdirp(dirName);
+      expect(result).to.not.be.undefined;
     });
-    it('should return an error if a file exists with the same name as the directory', done => {
-      co(function*() {
-        let dirName = path.join(baseDir, 'fileExists'),
-            filePath = path.join(dirName, 'foo');
-        yield mkdirp(dirName);
-        fs.writeFileSync(filePath, '', {mode: 0o600});
-        let result = yield mkdirp(filePath);
-        expect(result).to.not.be.undefined;
-        done();
-      })();
+    it('should return an error if a file exists with the same name as the directory', async () => {
+      let dirName = path.join(baseDir, 'fileExists'),
+          filePath = path.join(dirName, 'foo');
+      await mkdirp(dirName);
+      fs.writeFileSync(filePath, '', {mode: 0o600});
+      let result = await mkdirp(filePath);
+      expect(result).to.not.be.undefined;
     });
-    it('should clean up after itself', done => {
-      co(function*() {
-        deleteFolderRecursive(baseDir);
-        done();
-      })();
+    it('should clean up after itself', async () => {
+      deleteFolderRecursive(baseDir);
     });
   });
 });

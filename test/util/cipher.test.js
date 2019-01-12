@@ -49,8 +49,12 @@ describe('Defiant utility class Cipher', () => {
     it('should fail decryption when the plain text changes', () => {
       expect(Cipher.decryptSigned(merge({}, result, {aad: 'X'}), password, iv)).to.be.false;
     });
-    it('should fail decryption when the authorization text (tag) changes', () => {
+    it('should fail decryption when the authorization text changes (tag incorrect length)', () => {
       expect(Cipher.decryptSigned(merge({}, result, {tag: 'X'}), password, iv)).to.be.false;
+    });
+    it('should fail decryption when the authorization text changes (tag correct length)', () => {
+      // 'WHhYeA==' is base64 encoding of "XxXx"
+      expect(Cipher.decryptSigned(merge({}, result, {tag: 'WHhYeA=='}), password, iv)).to.be.false;
     });
   });
   describe('when performing a hash', () => {

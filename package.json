@@ -4,8 +4,8 @@
   "description": "Plugin-based framework for creating websites.",
   "main": "index.js",
   "scripts": {
-    "test": "mocha -c -R tap --harmony --recursive test/*",
-    "test-w": "mocha -w --harmony --recursive -b"
+    "test": "mocha -c --recursive test/* -b",
+    "test-w": "mocha -w -c --recursive test/* -b"
   },
   "keywords": [
     "CMS",

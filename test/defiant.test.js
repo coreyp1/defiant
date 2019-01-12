@@ -1,15 +1,15 @@
 "use strict";
 
-const expect = require('chai').expect;
+const assert = require('chai').assert;
 const Defiant = require('../');
 
 describe('Defiant', () => {
   describe('base object', () => {
     it('should contain object Defiant.util', () => {
-      expect(Defiant.util).isObject;
+      assert.isObject(Defiant.util);
     });
-    it('should contain Plugin class', () => {
-      expect(Defiant.Plugin).isObject;
+    it('should contain Plugin function', () => {
+      assert.isFunction(Defiant.Plugin);
     });
   });
 });

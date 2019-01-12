@@ -13,12 +13,12 @@ describe('Plugin.Router', () => {
 
   describe('before being instantiated', () => {
     it('should reference Item', () => {
-      expect(Router.Item).to.not.be.empty;
+      expect(Router.Item).to.not.be.undefined;
       expect(new Router.Item()).to.be.an.instanceof(require('../../../lib/plugin/router/item'));
     });
 
     it('should reference Handler', () => {
-      expect(Router.Handler).to.not.be.empty;
+      expect(Router.Handler).to.not.be.undefined;
       expect(new Router.Handler({}, () => {})).to.be.an.instanceof(require('../../../lib/plugin/router/handler'));
     });
   });
