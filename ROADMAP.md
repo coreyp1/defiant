@@ -27,6 +27,7 @@ The things in this list are not in any particular order, although some may not b
 17. Layouts are minimally functional and can be partially edited in-browser, including drag-and-drop widget placement.
 18. There is a Library API for managing 3rd party JS inclusions.  Includes JQuery, JQuery UI, Bootstrap, and Materialize.
 19. The File API is shaping up, and progress is being made on the FileManager class, which allows for multiple types of file stores to manage uploaded files.
+20. The Query API is finally taking shape!!!  Honestly, it will probably be perceived as the heart of what makes Defiant a distinctive and amazing option.  Once it's finished, that is.
 
 ## TODO
 
@@ -71,13 +72,13 @@ The things in this list are not in any particular order, although some may not b
   * Stub out support for translation based on context.
   * Figure out where to go from here...
 12. File API
-  * ~~When files are uploaded, they should be tracked by the system.  They may be transferred to other file systems.~~ Partially working.
-  * FTP
-  * S3 (and related)
+  * ~~When files are uploaded, they should be tracked by the system.  They may be transferred to other file systems.~~ Partially working.  Will store files locally.  Need to add additional storage types:
+    * FTP
+    * S3 (and related)
 13. Logging/Data Store
   * There are 3 types of data in the system:
     * Database (relational data)
-    * File-based settings (Settings plugin)
+    * ~~File-based settings (Settings plugin)~~ Working
     * Logs (data that should be stored, but not necessarily indexed)
       * Possibly emulate logrotate behavior
       * Possibly track log files with the File API (would make it easy to backup logs to offsite storage, for example!)
@@ -88,7 +89,8 @@ The things in this list are not in any particular order, although some may not b
 15. Other Plugin discovery
   * It would be nice if Defiant could discover other Defiant-compatible modules (plugins) that have been installed either locally or globally.
   * This would make UI-based management of the engine very nice!
-16. UI-based Views creation
+16. UI-based Query builder.  (Inspired by Drupal Views)
+  * ~~Initial, proof-of-concept is done.  QueryApi exists and can perform nested queries and display results.~~ More work on formatting plugins is required, though, and is in progress.  All of this must be fleshed out before working on the GUI.
   * A powerful feature available in Drupal, but that could be made much nicer in a Node.js-based implementation.
   * Lots of ideas, but this on is a biggie, and is further down the road.
 17. WYSIWYG
@@ -100,7 +102,10 @@ The things in this list are not in any particular order, although some may not b
   * Multiple engines could communicate with one another to pass along file-based settings changes (presumably databases will be synchronizing themselves?).
 19. CMS
   * This is not the main goal of Defiant, but it is a practical use case, as CMS features may be useful to many types of other plugins.
+    * ~~The ORM and QueryApi is a HUGE step in this direction.~~
 20. E-Commerce
   * It's a long-term goal, but it would be important as many people are looking for this type of service these days.
-21. World Domination.
+21. ~~Form API~~  Largely working!
+  * Need to support ajax/partial form replacement.  This is complicated because of the cryptographic signing currently used in the FormApi.
+22. World Domination.
   * Because.
