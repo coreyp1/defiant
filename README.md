@@ -12,9 +12,9 @@ For the moment, there's only a handful of people looking at Defiant.  If you wou
 
 ## Disruptive technology... That's vague.  What exactly do you mean?  Can you give me an example?
 
-Let's use email as an example.  If you want your own email address (e.g., @yourname.com), you have one of two options: Either set up your own email server or have someone (like Google, Zoho, etc.) host it for you, probably for a monthly/annual fee.  Self-managing is extremely complicated (setting up firewalls, IMAP/POP3/SMTP access, a web-based front-end, DNS records with correct DKIM and SPF records, SSL certificates, spam filtering, antivirus, user management etc.), and if you get it wrong, the results can catastrophic.  Paying someone else to manage it, however, can get expensive when you need multiple user accounts, allows for little customization, and you are always at the mercy of that 3rd party (and however they may decide to spy on you).
+Let's use email as an example.  If you want your own email address (e.g., @yourname.com), you have one of two options: Either set up your own email server or have someone (like Google, Zoho, etc.) host it for you, probably for a monthly/annual fee.  Self-managing is extremely complicated (setting up firewalls, IMAP/POP3/SMTP access, a web-based front-end, DNS records with correct DKIM and SPF records, SSL certificates, spam filtering, antivirus, user management etc.), and if you get it wrong, the results can be catastrophic.  Paying someone else to manage it, however, can get expensive when you need multiple user accounts, allows for little customization, and you are always at the mercy of that 3rd party (and however they may decide to spy on you).
 
-What does this have to do with Defiant?  Defian't framework could provide all of the parts mentioned above, wrapped in a single, simple package (from the perspective of the end user).  In a sense, the framework's intent is to choreograph the interaction of all of these different, individual systems, and put them into a format that us "mere mortals" can implement safely.  Defiant wants you to be able to own and manage these technologies (and, by proxy, your own data) from the privacy of our own servers.
+What does this have to do with Defiant?  Defiant's framework could provide all of the parts mentioned above, wrapped in a single, simple package (from the perspective of the end user).  In a sense, the framework's intent is to choreograph the interaction of all of these different, individual systems, and put them into a format that us "mere mortals" can implement safely.  Defiant wants you to be able to own and manage these technologies (and, by proxy, your own data) from the privacy of our own servers.
 
 What kind of systems *could* be built using Defiant?
 * Email (mentioned above)
@@ -72,7 +72,7 @@ apt-get install python sqlite3
 ```
 These are required for the installation of modules that Defiant depends on.  It is not a direct dependency of the code base.
 
-### Run NPM Intall to download the dependencies.
+### Run NPM Install to download the dependencies.
 This will take a while...
 ```sh
 npm install
